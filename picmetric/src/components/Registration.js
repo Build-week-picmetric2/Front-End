@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
+import Spinner from './Spinner';
 
 
 
@@ -76,9 +77,12 @@ const Registration = (props) => {
                         required
                     />
                     {
-                        !!isLoading && <div>loading...</div>
+                        !!isLoading && <Spinner />
                     }
                     <button>Register</button>
+                    <div>
+                    {'Account Registered?'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(true)}}>Log in</a>
+                    </div>
                 </form>
             </div>
         );

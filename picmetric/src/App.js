@@ -10,6 +10,8 @@ import './App.css';
 const App = (props) => {
     return (
       <div className = 'app'>
+      
+
           <Switch>
             <Route exact path='/' component={Home} />
             <PrivateRoute path='/dashboard' component={Dashboard} />
