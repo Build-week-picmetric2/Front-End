@@ -84,6 +84,7 @@ const Login = (props) => {
           !!isLoading && <div>loading...</div>
         }
       </StyledForm>
+      <div>Don't have an account?<span>create one!</span></div>
     </div>
   )
 }

@@ -1,11 +1,14 @@
 import React from 'react';
+import PhotoCard from './PhotoCard';
 
-const PhotoList = () => {
+const PhotoList = (props) => {
     return (
         <div>
-            {photos.map(() => {
+            {/* {photos.map(() => {
                 //map over photos to display cards
-            })}
+                <PhotoCard />
+            })} */}
+            <div>PIC LIST</div>
         </div>
     )
 }
