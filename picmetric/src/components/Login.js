@@ -26,7 +26,8 @@ const StyledButton = styled.button`
     `
     
 
-function Login() {
+const Login = () => {
+
 const [user, setUser] = useState({ username: "", password: "" });
 
   const handleChange = event => {
@@ -68,3 +69,4 @@ const [user, setUser] = useState({ username: "", password: "" });
 }
 
 export default Login;
+

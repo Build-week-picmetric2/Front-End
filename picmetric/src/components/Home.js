@@ -1,18 +1,14 @@
-import React, {Component} from 'react';
-import Register from './components/register';
+import React, { useState, useEffect } from 'react';
+import Registration from './Registration';
 
-export default class Home extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Welcome to PicMetric</h1>
-                <h1>Status: {this.props.loggedInStatus}</h1>
-                <Register />
-            </div>
-        )
-    }
+const Home = () => {
+    return (
+        <div>
+            <h1>Welcome</h1>
+            <h1>Status:</h1>
+            <Registration />
+        </div>
+    )
 }
+
+export default Home;
