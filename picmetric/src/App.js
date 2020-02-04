@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from './components/Home';
+import Dashboard from './Dashboard';
+import Home from './Home';
+import { PrivateRoute } from './helpers/PrivateRoute';
 import './App.css';
 
 
@@ -9,10 +11,8 @@ const App = (props) => {
     return (
       <div className = 'app'>
           <Switch>
-            <Route exact path='/'>
-              <Home />
-            </Route>
-            {/* <Route path='/dashboard' component = {Dashboard} /> */}
+            <Route exact path='/' component={Home} />
+            <PrivateRoute path='/dashboard' component={Dashboard} />
           </Switch>
       </div>
     )
