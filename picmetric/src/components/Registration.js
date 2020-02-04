@@ -51,7 +51,6 @@ const Registration = (props) => {
         return (
             <div>
                 <form onSubmit={handleSubmit}>
-                
                     <input 
                         type ='email' 
                         name='email' 
@@ -60,7 +59,6 @@ const Registration = (props) => {
                         onChange={handleChange}
                         required
                     />
-
                     <input 
                         type ='password' 
                         name='password' 
@@ -69,7 +67,6 @@ const Registration = (props) => {
                         onChange={handleChange}
                         required
                     />
-
                     <input 
                         type ='password' 
                         name='password_confirmation' 

@@ -31,8 +31,8 @@ const StyledButton = styled.button`
 const Login = (props) => {
 
   const [user, setUser] = useState({ 
-    username: "", 
-    password: "" 
+    username: '', 
+    password: '' 
   });
 
   const [ isLoading, setIsLoading ] = useState(false);
@@ -58,7 +58,6 @@ const Login = (props) => {
 
   return (
     <div>
-      {console.log(user)}
       <StyledForm onSubmit={handleSubmit}>
         <StyledLabel>
           Username:
