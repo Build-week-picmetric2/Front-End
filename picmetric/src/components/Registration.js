@@ -1,33 +1,51 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { axiosWithAuth } from '../helpers/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 
-const Registration = () => {
-    const [ user, setUser ] = useState({
+
+const Registration = (props) => {
+    const [ credentials, setCredentials ] = useState({
         user: {
             email: '',
+            username: '',
             password: '',
             password_confirmation: ''
         }
     })
     const [ isLoading, setIsLoading ] = useState(false);
+    const history = useHistory();
 
     const handleChange = (event) => {
-        setUser({
-            ...user, [event.target.name]: event.target.value
+        setCredentials({
+            ...credentials, [event.target.name]: event.target.value
         });
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         setIsLoading(true)
-        axios.post('https://picmetric-demo.herokuapp.com/api/register',{
-        }, {withCredentials: true}
-        ).then(response =>{
-            console.log('registration res', response);
-        }).catch(error => {
-            console.log('registration error', error);
-        })
+        axiosWithAuth()
+            .post('/api/register', credentials)
+            // {}, {withCredentials: true}
+            .then(res => {
+                setIsLoading(true)
+                console.log('registration res', res);
+                axiosWithAuth()
+                    .post('/api/login', { username: credentials.username, password: credentials.password })
+                    .then(res => {
+                        console.log('login successful', res.data.message)
+                        localStorage.setItem('token', res.data.token)
+                        history.push('/Dashboard')
+                    }) 
+                    .catch(err => {
+                        console.log(err)
+                        // history.push('/Error')
+                    })
+            }).catch(err => {
+                console.log('registration error', err);
+                // history.push('/Error')
+            })
     }
 
         return (
@@ -38,7 +56,7 @@ const Registration = () => {
                         type ='email' 
                         name='email' 
                         placeholder='Email' 
-                        value={user.email} 
+                        value={credentials.email} 
                         onChange={handleChange}
                         required
                     />
@@ -47,7 +65,7 @@ const Registration = () => {
                         type ='password' 
                         name='password' 
                         placeholder='Password' 
-                        value={user.password} 
+                        value={credentials.password} 
                         onChange={handleChange}
                         required
                     />
@@ -56,7 +74,7 @@ const Registration = () => {
                         type ='password' 
                         name='password_confirmation' 
                         placeholder='Password confirmation' 
-                        value={user.password_confirmation} 
+                        value={credentials.password_confirmation} 
                         onChange={handleChange}
                         required
                     />

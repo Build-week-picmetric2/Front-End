@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
+import { axiosWithAuth } from '../helpers/axiosWithAuth';
 
 
 const StyledForm = styled.form`
@@ -26,9 +28,15 @@ const StyledButton = styled.button`
     `
     
 
-const Login = () => {
+const Login = (props) => {
 
-const [user, setUser] = useState({ username: "", password: "" });
+  const [user, setUser] = useState({ 
+    username: "", 
+    password: "" 
+  });
+
+  const [ isLoading, setIsLoading ] = useState(false);
+  const history = useHistory();
 
   const handleChange = event => {
     setUser({ ...user, [event.target.name]: event.target.value });
@@ -36,21 +44,30 @@ const [user, setUser] = useState({ username: "", password: "" });
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(user.name);
-    console.log(user.password);
+    setIsLoading(true);
+    axiosWithAuth()
+    .post('/api/login', user)
+    .then(res => {
+      setIsLoading(false)
+      console.log('authentication response', res);
+      localStorage.setItem('token', res.data.payload);
+      history.push('/Dashboard');
+    })
+    .catch(err => console.log(err));
   };
 
   return (
     <div>
       {console.log(user)}
-      <StyledForm onSubmit={event => handleSubmit(event)}>
+      <StyledForm onSubmit={handleSubmit}>
         <StyledLabel>
           Username:
           <input
             type="text"
             name="username"
             value={user.username}
-            onChange={event => handleChange(event)}
+            onChange={handleChange}
+            required
           />
         </StyledLabel>
         <StyledLabel>
@@ -59,10 +76,14 @@ const [user, setUser] = useState({ username: "", password: "" });
             type="text"
             name="password"
             value={user.password}
-            onChange={event => handleChange(event)}
+            onChange={handleChange}
+            required
           />
         </StyledLabel>
         <StyledButton>Submit!</StyledButton>
+        {
+          !!isLoading && <div>loading...</div>
+        }
       </StyledForm>
     </div>
   )
