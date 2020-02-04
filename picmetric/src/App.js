@@ -1,26 +1,40 @@
 import React from 'react';
-import Login from './components/Login';
-import styled from 'styled-components';
+
 import './App.css';
 
-const Header = styled.div`
-  display: flex;
-  justify-content: center;
-  color: blue;
-  font-size: 3rem;
-  padding: 2%;
-  `
 
 
-function App() {
-  
-  return (
-    <div>
-      <Header>Welcome to PicMetric</Header>
-      <Login />
+export default class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      loggedInStatus: 'NOT_LOGGED_IN',
+      user: {}
+    }
+  }
+  render() {
+    
+    return (
+    <div className = 'app'>
+      <BrowserRouter>
+        <Switch>
+          <Route 
+          exact 
+          path = {'/'}
+          render={props => (
+            <Home {...props} logginInStatus = {this.state.loggedInStatus/>
+          <Route exact path = {'/dashboard'} component = {Dashboard} />
+        </Switch>
+      </BrowserRouter>
     </div>
   )
+}
+  
   
 }
 
 export default App;
+
+        
