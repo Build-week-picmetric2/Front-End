@@ -81,6 +81,9 @@ const Login = (props) => {
           />
         </StyledLabel>
         <StyledButton>Submit!</StyledButton>
+        {
+          !!isLoading && <div>loading...</div>
+        }
       </StyledForm>
     </div>
   )
