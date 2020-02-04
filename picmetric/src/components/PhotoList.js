@@ -9,3 +9,5 @@ const PhotoList = () => {
         </div>
     )
 }
+
+export default PhotoList;

@@ -15,3 +15,5 @@ const PhotoCard = () => {
         </div>
     )
 }
+
+export default PhotoCard;
