@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
+
 const NavDiv = styled.nav`
             width: 100%;
             height: 10vh;
@@ -18,11 +20,15 @@ const NavItems = styled.a`
     display: flex;
     justify-content: space-around;
 `
-
+const H1 = styled.h1`
+    margin-right: 11%;
+`
 
 const Navigation = () => {
     return (
         <NavDiv>
+        <img src = '../assets/logoPngW.png' alt = 'PicMetric 2 Logo'/>
+            <H1>PICMETRIC 2</H1>
             <NavItems>
                 <a>Login</a>
                 <a>Sign Up</a>
