@@ -1,9 +1,9 @@
 import React from 'react';
 
-const PhotoCard = () => {
+const PhotoCard = (props) => {
     return (
         <div>
-            <span>Image</span>
+            <img className='card-img' src={props.photo.url} alt={props.photo.name}/>
             <div>
                 <form>
                     <input 

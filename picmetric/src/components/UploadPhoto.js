@@ -1,28 +1,33 @@
 import React, { useState } from 'react';
-import { axiosImageWithAuth } from '../helpers/axiosImageWithAuth';
+import { axiosWithAuth } from '../helpers/axiosWithAuth';
 
 const UploadPhoto = (props) => {
     const [ photo, setPhoto] = useState({
-        imageURL: '',
+        preview: '',
+        raw: '',
+        uploadResponse: ''
     })
     // const [ uploading, setUploading ] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const formData = new FormData()
-        formData.append('image', photo.imageURL )
+        formData.append('image', photo.raw )
         try {
-            await axiosImageWithAuth()
-            .post('/api/photos', {photo: photo.imageURL})
+            const res = await axiosWithAuth()
+            .post('/api/photos', formData )
+            setPhoto({ ...photo, uploadResponse: res.data.message })
+            console.log(res.data)
         } catch (err) {
-            console.log(err.res)
+            console.log(err.res.data)
         }
     }
     const handleChange = (e) => {
         // setUploading(false)
         setPhoto({
+            ...photo,
             preview: URL.createObjectURL(e.target.files[0]),
-            raw: e.target.files[0]
+            raw: e.target.files[0],
         })
     }
     return(
@@ -48,6 +53,7 @@ const UploadPhoto = (props) => {
                 onChange={handleChange}
             />
             <br />
+            <p>{photo.uploadResponse}!</p>
             <button onClick={handleSubmit}>Add Photo</button>
         </div>
     )
