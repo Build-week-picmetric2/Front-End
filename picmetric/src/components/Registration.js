@@ -3,7 +3,7 @@ import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
 import Spinner from './Spinner';
 
-import {RegisterDiv, StyledRegisterForm, StyledInput, StyledRegisterButton} from './Styles';
+import {RegisterDiv, StyledRegisterForm, StyledInput, StyledRegisterButton, BottomRegisterDiv} from './Styles';
 
 
 
@@ -62,7 +62,7 @@ const Registration = (props) => {
                         onChange={handleChange}
                         required
                     />
-                    <input 
+                    <StyledInput 
                         type ='text' 
                         name='username' 
                         placeholder='Username' 
@@ -81,7 +81,7 @@ const Registration = (props) => {
                     <StyledInput 
                         type ='password' 
                         name='password_confirmation' 
-                        placeholder='Password confirmation' 
+                        placeholder='Confirm Password' 
                         value={props.password_confirmation} 
                         onChange={handleChange}
                         required
@@ -90,9 +90,9 @@ const Registration = (props) => {
                         !!isLoading && <Spinner />
                     }
                     <StyledRegisterButton>Register</StyledRegisterButton>
-                    <div>
+                    <BottomRegisterDiv>
                     {'Account Registered?'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(true)}}>Log in</a>
-                    </div>
+                    </BottomRegisterDiv>
                 </StyledRegisterForm>
             </RegisterDiv>
         );

@@ -31,7 +31,15 @@ export const NavItems = styled.a`
     width: 20%;
     justify-content: space-between;
     font-family: 'Julius Sans One', sans-serif;
+    
 `
+
+export const NavLinks = styled.a`
+
+    text-decoration: none;
+    color: #fbfbfb;
+`
+
 export const H1 = styled.h1`
     margin-left: 11%;
     font-family: 'Julius Sans One', sans-serif;
@@ -96,12 +104,13 @@ export const StyledRegisterForm = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
 `
 
 export const StyledInput = styled.input`
     font-family: 'Julius Sans One', sans-serif;
-    padding: 1%;
+    margin: 5%;
 `
 export const StyledRegisterButton = styled.button`
     font-family: 'Julius Sans One', sans-serif;
@@ -117,6 +126,13 @@ export const StyledRegisterButton = styled.button`
     margin: 1.5rem auto;
 
 `
+export const BottomRegisterDiv = styled.div`
+
+    padding-bottom: 11%;
+
+`
+
+
 //footer styling
 
 export const StyledFooter = styled.footer`
@@ -124,13 +140,13 @@ export const StyledFooter = styled.footer`
     background-color: black;
     position: absolute;
     bottom: 0;
-
+    margin-top: 9%;
 `
 export const StyledP = styled.p`
     text-align: center;
     color: #fbfbfb;
     font-size: 1rem;
-    padding: 1rem;
+    
     font-family: 'Raleway', sans-serif;
     
 `
