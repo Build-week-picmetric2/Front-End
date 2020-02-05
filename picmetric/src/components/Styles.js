@@ -93,7 +93,7 @@ export const RegisterDiv = styled.div`
     font-family: 'Julius Sans One', sans-serif;
     display: flex;
     justify-content: center;
-    
+    background-color: #fbfbfb;
 
 `
 
