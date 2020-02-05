@@ -10,19 +10,24 @@ const PhotoList = (props) => {
         axiosWithAuth()
         .get('/api/photos')
         .then(res => {
-            setPhotos({url:res})
+            console.log(res)
+            setPhotos(res.data)
         })
         .catch(err => {
             console.log(err)
         })
         return photos
-    })
+    },[])
     return (
         <div>
-            {photos.map((item) => (
+            {/* {photos.map((item) => (
                 //map over photos to display cards
-                <PhotoCard photos={item.photo}/>
-            ))}
+                <div key='photo.id'>
+                    <PhotoCard 
+                        photos={item.url}
+                    />
+                </div>
+            ))} */}
             <div>PIC LIST</div>
         </div>
     )
