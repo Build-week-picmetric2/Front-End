@@ -3,6 +3,11 @@ import styled from 'styled-components';
 
 
 //navigation styling
+export const StyledImg = styled.img`
+    height: 3rem;
+
+`
+
 export const NavDiv = styled.nav`
             width: 100%;
             height: 10vh;
