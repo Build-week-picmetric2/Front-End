@@ -1,6 +1,5 @@
+
 import React, { useState } from 'react';
-import {Route, Switch, Link} from 'react-router-dom';
-import styled from 'styled-components';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import {Header} from './components/Styles';

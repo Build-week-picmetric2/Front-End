@@ -42,11 +42,11 @@ const Registration = (props) => {
                     }) 
                     .catch(err => {
                         console.log(err)
-                        // history.push('/Error')
+                        history.push('/')
                     })
             }).catch(err => {
                 console.log('registration error', err);
-                // history.push('/Error')
+                history.push('/')
             })
     }
 
@@ -57,7 +57,15 @@ const Registration = (props) => {
                         type ='email' 
                         name='email' 
                         placeholder='Email' 
-                        value={credentials.email} 
+                        value={props.email} 
+                        onChange={handleChange}
+                        required
+                    />
+                    <input 
+                        type ='text' 
+                        name='username' 
+                        placeholder='Username' 
+                        value={props.username} 
                         onChange={handleChange}
                         required
                     />
@@ -65,7 +73,7 @@ const Registration = (props) => {
                         type ='password' 
                         name='password' 
                         placeholder='Password' 
-                        value={credentials.password} 
+                        value={props.password} 
                         onChange={handleChange}
                         required
                     />
@@ -73,7 +81,7 @@ const Registration = (props) => {
                         type ='password' 
                         name='password_confirmation' 
                         placeholder='Password confirmation' 
-                        value={credentials.password_confirmation} 
+                        value={props.password_confirmation} 
                         onChange={handleChange}
                         required
                     />

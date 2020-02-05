@@ -91,6 +91,7 @@ const Login = (props) => {
 
        
       </StyledForm>
+      <div>Don't have an account?<span>create one!</span></div>
     </div>
   )
 }
