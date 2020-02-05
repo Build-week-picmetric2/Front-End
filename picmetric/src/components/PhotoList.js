@@ -15,10 +15,11 @@ const PhotoList = (props) => {
         .catch(err => {
             console.log(err.res.data)
         })
-    },[])
+    },[setPhotos])
     return (
         <div>
             <h2>Gallery</h2>
+            <div className='gallery'>
             {photos.map(photo => {
                 return (
                 <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
@@ -28,7 +29,8 @@ const PhotoList = (props) => {
                     />
                 </Link>
                 );
-            })}
+            })}                
+            </div>
         </div>
     )
 }
