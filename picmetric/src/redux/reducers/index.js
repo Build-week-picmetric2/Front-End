@@ -1,8 +1,7 @@
-const initialState = {
-    files: [],
-    pending: [],
-    next: null,
-    uploading: false,
-    uploaded: {},
-    status: 'idle'
-}
+import { combineReducers } from 'redux'
+
+import { placeholderReducer } from './placeholderReducer';
+import { serverReducers } from './serverReducers'
+// import { dsReducer } from './dsReducer';
+
+export const reducer = combineReducers({ placeholderReducer: placeholderReducer, serverReducers: serverReducers})

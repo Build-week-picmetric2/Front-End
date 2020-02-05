@@ -1,44 +1,47 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { axiosWithAuth } from '../helpers/axiosWithAuth';
 
 const UploadPhoto = (props) => {
     const [ photo, setPhoto] = useState({
         preview: '',
-        raw: ''
+        raw: '',
+        uploadResponse: ''
     })
-    const [ uploading, setUploading ] = useState(false)
+    // const [ uploading, setUploading ] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const formData = new FormData()
-        formData.append('photo', photo.raw)
-        const config = { headers: {'content-type': 'multipart/form-data' }}
+        formData.append('image', photo.raw )
         try {
-            await axios
-            .post('/api/photos', {photo: photo.raw}, config)
+            const res = await axiosWithAuth()
+            .post('/api/photos', formData )
+            setPhoto({ ...photo, uploadResponse: res.data.message })
+            console.log(res.data)
         } catch (err) {
-            console.log(err.res)
+            console.log(err.res.data)
         }
     }
     const handleChange = (e) => {
-        setUploading(false)
+        // setUploading(false)
         setPhoto({
+            ...photo,
             preview: URL.createObjectURL(e.target.files[0]),
-            raw: e.target.files[0]
+            raw: e.target.files[0],
         })
     }
     return(
         <div>
-            <h1>Upload </h1>
+            <h1>Upload Photo</h1>
             <label htmlFor='upload-button'>
                 {
                     photo.preview ? <img src={ photo.preview } width='300' height='250' alt='preview' /> : (
                         <>
-                            {/* <span className="fa-stack fa-2x mt-3 mb-2">
+                            <span className="fa-stack fa-2x mt-3 mb-2">
                                 <i className="fas fa-circle fa-stack-2x"></i>
                                 <i className="fas fa-store fa-stack-1x fa-inverse"></i>
-                            </span> */}
-                            <h5 className="text-center"> Upload your photo</h5>
+                            </span>
+                            <h5 className="text-center">Add File</h5>
                         </>
                     )
                 }
@@ -50,6 +53,7 @@ const UploadPhoto = (props) => {
                 onChange={handleChange}
             />
             <br />
+            <p>{photo.uploadResponse}!</p>
             <button onClick={handleSubmit}>Add Photo</button>
         </div>
     )

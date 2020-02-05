@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
+import Spinner from './Spinner';
+
+import {RegisterDiv, StyledRegisterForm, StyledInput, StyledRegisterButton, BottomRegisterDiv} from './Styles';
 
 
 
@@ -49,9 +52,9 @@ const Registration = (props) => {
     }
 
         return (
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <input 
+            <RegisterDiv>
+                <StyledRegisterForm onSubmit={handleSubmit}>
+                    <StyledInput 
                         type ='email' 
                         name='email' 
                         placeholder='Email' 
@@ -59,7 +62,7 @@ const Registration = (props) => {
                         onChange={handleChange}
                         required
                     />
-                    <input 
+                    <StyledInput 
                         type ='text' 
                         name='username' 
                         placeholder='Username' 
@@ -67,7 +70,7 @@ const Registration = (props) => {
                         onChange={handleChange}
                         required
                     />
-                    <input 
+                    <StyledInput  
                         type ='password' 
                         name='password' 
                         placeholder='Password' 
@@ -75,20 +78,23 @@ const Registration = (props) => {
                         onChange={handleChange}
                         required
                     />
-                    <input 
+                    <StyledInput 
                         type ='password' 
                         name='password_confirmation' 
-                        placeholder='Password confirmation' 
+                        placeholder='Confirm Password' 
                         value={props.password_confirmation} 
                         onChange={handleChange}
                         required
                     />
                     {
-                        !!isLoading && <div>loading...</div>
+                        !!isLoading && <Spinner />
                     }
-                    <button>Register</button>
-                </form>
-            </div>
+                    <StyledRegisterButton>Register</StyledRegisterButton>
+                    <BottomRegisterDiv>
+                    {'Account Registered?'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(true)}}>Log in</a>
+                    </BottomRegisterDiv>
+                </StyledRegisterForm>
+            </RegisterDiv>
         );
     }
 

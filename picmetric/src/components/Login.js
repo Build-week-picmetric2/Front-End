@@ -1,31 +1,11 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
+
 import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
+import Spinner from './Spinner';
+import {StyledLoginDiv, StyledLoginForm, StyledLabel, StyledButton } from './Styles';
 
 
-const StyledForm = styled.form`
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    `
-const StyledLabel = styled.label`
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1%;
-    `
-const StyledButton = styled.button`
-
-    margin: 2%;
-    padding: 1%;
-    width: 11%;
-    border-radius: .5rem;
-    `
     
 
 const Login = (props) => {
@@ -50,15 +30,15 @@ const Login = (props) => {
     .then(res => {
       setIsLoading(false)
       console.log('authentication response', res);
-      localStorage.setItem('token', res.data.payload);
+      localStorage.setItem('token', res.data.token);
       history.push('/Dashboard');
     })
     .catch(err => console.log(err));
   };
 
   return (
-    <div>
-      <StyledForm onSubmit={handleSubmit}>
+    <StyledLoginDiv>
+      <StyledLoginForm onSubmit={handleSubmit}>
         <StyledLabel>
           Username:
           <input
@@ -81,11 +61,17 @@ const Login = (props) => {
         </StyledLabel>
         <StyledButton>Submit!</StyledButton>
         {
-          !!isLoading && <div>loading...</div>
+          !!isLoading && <Spinner />
         }
-      </StyledForm>
-      <div>Don't have an account?<span>create one!</span></div>
-    </div>
+
+       <div>
+          {'Not Registered?'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(false)}}>Create New Account</a>
+      </div>
+
+       
+      </StyledLoginForm>
+      
+    </StyledLoginDiv>
   )
 }
 
