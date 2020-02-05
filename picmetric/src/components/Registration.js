@@ -3,27 +3,8 @@ import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
 import Spinner from './Spinner';
 import styled from 'styled-components';
+import {RegisterDiv, StyledForm, StyledInput} from './Styles';
 
-const RegisterDiv = styled.div`
-    
-    display: flex;
-    justify-content: center;
-    
-
-`
-
-const StyledForm = styled.form`
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-`
-
-const StyledInput = styled.input`
-
-    margin: 5%;
-`
 
 const Registration = (props) => {
     const [ credentials, setCredentials ] = useState({
