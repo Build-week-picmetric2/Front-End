@@ -1,5 +1,32 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
+import styled from 'styled-components';
+
+const H5 =styled.h5`
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+
+`
+
+const H1 = styled.h1`
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+`
+
+const StyledButton = styled.button`
+    font-family: 'Julius Sans One', sans-serif;
+    display: block;
+    background-color: black;
+    cursor: pointer;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    color: #fbfbfb;
+    margin: 1.5rem auto;
+    
+    `
 
 const UploadPhoto = (props) => {
     const [ photo, setPhoto] = useState({
@@ -32,7 +59,7 @@ const UploadPhoto = (props) => {
     }
     return(
         <div>
-            <h1>Upload Photo</h1>
+            <H1>Upload Photo</H1>
             <label htmlFor='upload-button'>
                 {
                     photo.preview ? <img src={ photo.preview } width='300' height='250' alt='preview' /> : (
@@ -41,7 +68,7 @@ const UploadPhoto = (props) => {
                                 <i className="fas fa-circle fa-stack-2x"></i>
                                 <i className="fas fa-store fa-stack-1x fa-inverse"></i>
                             </span>
-                            <h5 className="text-center">Add File</h5>
+                            <H5 className="text-center">Add File</H5>
                         </>
                     )
                 }
@@ -53,8 +80,8 @@ const UploadPhoto = (props) => {
                 onChange={handleChange}
             />
             <br />
-            <p>{photo.uploadResponse}!</p>
-            <button onClick={handleSubmit}>Add Photo</button>
+            <p>{photo.uploadResponse}</p>
+            <StyledButton onClick={handleSubmit}>Add Photo</StyledButton>
         </div>
     )
 }

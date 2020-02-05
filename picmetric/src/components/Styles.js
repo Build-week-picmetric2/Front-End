@@ -50,11 +50,13 @@ export const Header = styled.h1`
     display: flex;
     justify-content: center;
     font-family: 'Julius Sans One', sans-serif;
+    margin-top: 7%;
 `
 //Log in page styles
 
 export const StyledLoginDiv = styled.div`
   background-color: #fdfdfd;
+  margin: 5% 2% 10% 2%;
 `
 
 export const StyledLoginForm = styled.form`
@@ -87,6 +89,12 @@ export const StyledButton = styled.button`
     margin: 1.5rem auto;
     
     `
+
+export const BottomLoginDiv = styled.div`
+
+    margin-top: 2%;
+
+`
 
 //register page styling
 export const RegisterDiv = styled.div`
@@ -138,9 +146,10 @@ export const BottomRegisterDiv = styled.div`
 export const StyledFooter = styled.footer`
     width: 100%;
     background-color: black;
-    position: absolute;
+    padding: 1%;
     bottom: 0;
-    margin-top: 9%;
+    margin: 0;
+    position: absolute;
 `
 export const StyledP = styled.p`
     text-align: center;
@@ -150,4 +159,6 @@ export const StyledP = styled.p`
     font-family: 'Raleway', sans-serif;
     
 `
+//photo list styles
+
 
