@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
-import { axiosWithAuth } from '../helpers/axiosWithAuth';
+import { axiosImageWithAuth } from '../helpers/axiosImageWithAuth';
 
 const UploadPhoto = (props) => {
     const [ photo, setPhoto] = useState({
-        name: '',
-        url: '',
-        person: '',
-        category: ''
+        imageURL: '',
     })
     // const [ uploading, setUploading ] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         const formData = new FormData()
-        formData.append('photo', photo.url)
-        const config = { headers: {'content-type': 'multipart/form-data' }}
+        formData.append('image', photo.imageURL )
         try {
-            await axiosWithAuth()
-            .post('/api/photos', {photo: photo.url}, config)
+            await axiosImageWithAuth()
+            .post('/api/photos', {photo: photo.imageURL})
         } catch (err) {
             console.log(err.res)
         }
@@ -31,7 +27,7 @@ const UploadPhoto = (props) => {
     }
     return(
         <div>
-            <h1>Upload </h1>
+            <h1>Upload Photo</h1>
             <label htmlFor='upload-button'>
                 {
                     photo.preview ? <img src={ photo.preview } width='300' height='250' alt='preview' /> : (
@@ -40,7 +36,7 @@ const UploadPhoto = (props) => {
                                 <i className="fas fa-circle fa-stack-2x"></i>
                                 <i className="fas fa-store fa-stack-1x fa-inverse"></i>
                             </span>
-                            <h5 className="text-center"> Upload your photo</h5>
+                            <h5 className="text-center">Add File</h5>
                         </>
                     )
                 }

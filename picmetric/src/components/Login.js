@@ -51,7 +51,7 @@ const Login = (props) => {
     .then(res => {
       setIsLoading(false)
       console.log('authentication response', res);
-      localStorage.setItem('token', res.data.payload);
+      localStorage.setItem('token', res.data.token);
       history.push('/Dashboard');
     })
     .catch(err => console.log(err));

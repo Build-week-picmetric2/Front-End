@@ -4,7 +4,7 @@ export const axiosWithAuth = () => {
     return axios.create({
         baseURL: 'https://picmetric-demo.herokuapp.com',
         headers: {
-            Authorization: localStorage.getItem('token')
+            authorization: localStorage.getItem('token')
         }
     })
 }

@@ -4,7 +4,7 @@ import { axiosWithAuth } from '../helpers/axiosWithAuth';
 
 const PhotoList = (props) => {
     const [photos, setPhotos] = useState({
-        url: ''
+        photo: ''
     })
     useEffect(()=> {
         axiosWithAuth()
@@ -22,11 +22,10 @@ const PhotoList = (props) => {
         <div>
             {/* {photos.map((item) => (
                 //map over photos to display cards
-                <div key='photo.id'>
-                    <PhotoCard 
-                        photos={item.url}
-                    />
-                </div>
+                <PhotoCard
+                    key={item.id} 
+                    item={item.url}
+                />
             ))} */}
             <div>PIC LIST</div>
         </div>
