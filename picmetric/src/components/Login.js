@@ -4,29 +4,41 @@ import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import Spinner from './Spinner';
 
+const StyledLoginDiv = styled.div`
+  background-color: #fdfdfd;
+`
 
-const StyledForm = styled.form`
-    
+const StyledLoginForm = styled.form`
+    font-family: 'Julius Sans One', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     `
 const StyledLabel = styled.label`
-    
+    font-family: 'Julius Sans One', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1%;
     `
-const StyledButton = styled.button`
 
-    margin: 2%;
-    padding: 1%;
-    width: 11%;
-    border-radius: .5rem;
+const StyledButton = styled.button`
+    font-family: 'Julius Sans One', sans-serif;
+    display: block;
+    background-color: black;
+    cursor: pointer;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    color: #fbfbfb;
+    margin: 1.5rem auto;
+    
     `
+
     
 
 const Login = (props) => {
@@ -58,8 +70,8 @@ const Login = (props) => {
   };
 
   return (
-    <div>
-      <StyledForm onSubmit={handleSubmit}>
+    <StyledLoginDiv>
+      <StyledLoginForm onSubmit={handleSubmit}>
         <StyledLabel>
           Username:
           <input
@@ -90,9 +102,9 @@ const Login = (props) => {
       </div>
 
        
-      </StyledForm>
-      <div>Don't have an account?<span>create one!</span></div>
-    </div>
+      </StyledLoginForm>
+      
+    </StyledLoginDiv>
   )
 }
 
