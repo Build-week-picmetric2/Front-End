@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
+import Spinner from './Spinner';
 
 
 const StyledForm = styled.form`
@@ -81,8 +82,14 @@ const Login = (props) => {
         </StyledLabel>
         <StyledButton>Submit!</StyledButton>
         {
-          !!isLoading && <div>loading...</div>
+          !!isLoading && <Spinner />
         }
+
+       <div>
+          {'Not registered'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(false)}}>Create New Account</a>
+      </div>
+
+       
       </StyledForm>
       <div>Don't have an account?<span>create one!</span></div>
     </div>

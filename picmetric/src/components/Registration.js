@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
-
+import Spinner from './Spinner';
+import styled from 'styled-components';
+import {RegisterDiv, StyledForm, StyledInput} from './Styles';
 
 
 const Registration = (props) => {
@@ -49,9 +51,9 @@ const Registration = (props) => {
     }
 
         return (
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <input 
+            <RegisterDiv>
+                <StyledForm onSubmit={handleSubmit}>
+                    <StyledInput 
                         type ='email' 
                         name='email' 
                         placeholder='Email' 
@@ -67,7 +69,7 @@ const Registration = (props) => {
                         onChange={handleChange}
                         required
                     />
-                    <input 
+                    <StyledInput  
                         type ='password' 
                         name='password' 
                         placeholder='Password' 
@@ -75,7 +77,7 @@ const Registration = (props) => {
                         onChange={handleChange}
                         required
                     />
-                    <input 
+                    <StyledInput 
                         type ='password' 
                         name='password_confirmation' 
                         placeholder='Password confirmation' 
@@ -84,11 +86,14 @@ const Registration = (props) => {
                         required
                     />
                     {
-                        !!isLoading && <div>loading...</div>
+                        !!isLoading && <Spinner />
                     }
                     <button>Register</button>
-                </form>
-            </div>
+                    <div>
+                    {'Account Registered?'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(true)}}>Log in</a>
+                    </div>
+                </StyledForm>
+            </RegisterDiv>
         );
     }
 
