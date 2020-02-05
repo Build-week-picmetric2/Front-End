@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import UploadPhoto from './components/UploadPhoto';
 import PhotoList from './components/PhotoList';
 

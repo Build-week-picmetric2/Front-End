@@ -3,10 +3,12 @@ import { axiosWithAuth } from '../helpers/axiosWithAuth';
 
 const UploadPhoto = (props) => {
     const [ photo, setPhoto] = useState({
-        preview: '',
-        url: ''
+        name: '',
+        url: '',
+        person: '',
+        category: ''
     })
-    const [ uploading, setUploading ] = useState(false)
+    // const [ uploading, setUploading ] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -21,7 +23,7 @@ const UploadPhoto = (props) => {
         }
     }
     const handleChange = (e) => {
-        setUploading(false)
+        // setUploading(false)
         setPhoto({
             preview: URL.createObjectURL(e.target.files[0]),
             raw: e.target.files[0]
