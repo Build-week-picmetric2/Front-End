@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
 import Spinner from './Spinner';
-import styled from 'styled-components';
-import {RegisterDiv, StyledForm, StyledInput} from './Styles';
+
+import {RegisterDiv, StyledRegisterForm, StyledInput, StyledRegisterButton} from './Styles';
+
 
 
 const Registration = (props) => {
@@ -52,7 +53,7 @@ const Registration = (props) => {
 
         return (
             <RegisterDiv>
-                <StyledForm onSubmit={handleSubmit}>
+                <StyledRegisterForm onSubmit={handleSubmit}>
                     <StyledInput 
                         type ='email' 
                         name='email' 
@@ -88,11 +89,11 @@ const Registration = (props) => {
                     {
                         !!isLoading && <Spinner />
                     }
-                    <button>Register</button>
+                    <StyledRegisterButton>Register</StyledRegisterButton>
                     <div>
                     {'Account Registered?'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(true)}}>Log in</a>
                     </div>
-                </StyledForm>
+                </StyledRegisterForm>
             </RegisterDiv>
         );
     }

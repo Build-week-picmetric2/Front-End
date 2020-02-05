@@ -8,6 +8,8 @@ export const StyledNav = styled.nav`
     justify-content: center;
     background-color: black;
     color: #fbfbfb;
+    postion: sticky;
+    top: 0;
 `
 
 export const StyledImg = styled.img`
@@ -41,6 +43,42 @@ export const Header = styled.h1`
     justify-content: center;
     font-family: 'Julius Sans One', sans-serif;
 `
+//Log in page styles
+
+export const StyledLoginDiv = styled.div`
+  background-color: #fdfdfd;
+`
+
+export const StyledLoginForm = styled.form`
+    font-family: 'Julius Sans One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    `
+export const StyledLabel = styled.label`
+    font-family: 'Julius Sans One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    `
+
+export const StyledButton = styled.button`
+    font-family: 'Julius Sans One', sans-serif;
+    display: block;
+    background-color: black;
+    cursor: pointer;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    color: #fbfbfb;
+    margin: 1.5rem auto;
+    
+    `
 
 //register page styling
 export const RegisterDiv = styled.div`
@@ -51,18 +89,49 @@ export const RegisterDiv = styled.div`
 
 `
 
-export const StyledForm = styled.form`
+export const StyledRegisterForm = styled.form`
+
     font-family: 'Julius Sans One', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
 `
 
 export const StyledInput = styled.input`
     font-family: 'Julius Sans One', sans-serif;
+    padding: 1%;
+`
+export const StyledRegisterButton = styled.button`
+    font-family: 'Julius Sans One', sans-serif;
+    display: block;
+    background-color: black;
+    cursor: pointer;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    color: #fbfbfb;
+    margin: 1.5rem auto;
+
+`
+//footer styling
+
+export const StyledFooter = styled.footer`
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+
+`
+export const StyledP = styled.p`
+    text-align: center;
+    color: #fbfbfb;
+    font-size: 1rem;
+    padding: 1rem;
+    font-family: 'Raleway', sans-serif;
     
 `
-
-
 

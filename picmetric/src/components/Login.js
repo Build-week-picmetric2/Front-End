@@ -1,43 +1,10 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
+
 import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import Spinner from './Spinner';
+import {StyledLoginDiv, StyledLoginForm, StyledLabel, StyledButton } from './Styles';
 
-const StyledLoginDiv = styled.div`
-  background-color: #fdfdfd;
-`
-
-const StyledLoginForm = styled.form`
-    font-family: 'Julius Sans One', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    `
-const StyledLabel = styled.label`
-    font-family: 'Julius Sans One', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1%;
-    `
-
-const StyledButton = styled.button`
-    font-family: 'Julius Sans One', sans-serif;
-    display: block;
-    background-color: black;
-    cursor: pointer;
-    height: 45px;
-    font-size: 1rem;
-    border-radius: 10px;
-    text-align: center;
-    width: 200px;
-    color: #fbfbfb;
-    margin: 1.5rem auto;
-    
-    `
 
     
 
