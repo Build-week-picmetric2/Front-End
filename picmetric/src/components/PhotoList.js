@@ -4,12 +4,7 @@ import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { Link } from 'react-router-dom';
 
 const PhotoList = (props) => {
-    const [photos, setPhotos] = useState({
-        name: '',
-        url: '',
-        person: '',
-        category: ''
-    })
+    const [photos, setPhotos] = useState([])
     useEffect(()=> {
         axiosWithAuth()
         .get('/api/photos')
@@ -23,15 +18,17 @@ const PhotoList = (props) => {
     },[])
     return (
         <div>
-            {/* {photos.map(photo => (
-                //map over photos to display cards
-                    <Link to={`/`} key={photo.url}>
-                        <PhotoCard 
-                            url={photo.url}
-                        />
-                    </Link>
-            ))} */}
-            <div>PhotoList</div>
+            <h2>Gallery</h2>
+            {photos.map(photo => {
+                return (
+                <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
+                    <img
+                    src={photo.url}
+                    alt={photo.name}
+                    />
+                </Link>
+                );
+            })}
         </div>
     )
 }
