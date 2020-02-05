@@ -3,57 +3,151 @@ import styled from 'styled-components';
 
 
 //navigation styling
+export const StyledNav = styled.nav`
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: #fbfbfb;
+    postion: sticky;
+    top: 0;
+`
+
 export const StyledImg = styled.img`
-    height: 3rem;
+    height: 5rem;
 
 `
 
 export const NavDiv = styled.nav`
-            width: 100%;
-            height: 10vh;
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           width: 100%;
+           max-width: 1000px;
             
 
         `
 export const NavItems = styled.a`
-
-    width: 33%;
     display: flex;
-    justify-content: space-around;
+    width: 20%;
+    justify-content: space-between;
+    font-family: 'Julius Sans One', sans-serif;
+    
 `
+
+export const NavLinks = styled.a`
+
+    text-decoration: none;
+    color: #fbfbfb;
+`
+
 export const H1 = styled.h1`
-    margin-right: 11%;
+    margin-left: 11%;
+    font-family: 'Julius Sans One', sans-serif;
 `
 
 //home page header styling
 export const Header = styled.h1`
     display: flex;
     justify-content: center;
+    font-family: 'Julius Sans One', sans-serif;
+`
+//Log in page styles
 
+export const StyledLoginDiv = styled.div`
+  background-color: #fdfdfd;
 `
 
-//register page styling
-export const RegisterDiv = styled.div`
-    
-    display: flex;
-    justify-content: center;
-    
-
-`
-
-export const StyledForm = styled.form`
-    
+export const StyledLoginForm = styled.form`
+    font-family: 'Julius Sans One', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    `
+export const StyledLabel = styled.label`
+    font-family: 'Julius Sans One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    `
+
+export const StyledButton = styled.button`
+    font-family: 'Julius Sans One', sans-serif;
+    display: block;
+    background-color: black;
+    cursor: pointer;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    color: #fbfbfb;
+    margin: 1.5rem auto;
+    
+    `
+
+//register page styling
+export const RegisterDiv = styled.div`
+    font-family: 'Julius Sans One', sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: #fbfbfb;
+
+`
+
+export const StyledRegisterForm = styled.form`
+
+    font-family: 'Julius Sans One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 
 `
 
 export const StyledInput = styled.input`
-
+    font-family: 'Julius Sans One', sans-serif;
     margin: 5%;
 `
+export const StyledRegisterButton = styled.button`
+    font-family: 'Julius Sans One', sans-serif;
+    display: block;
+    background-color: black;
+    cursor: pointer;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    color: #fbfbfb;
+    margin: 1.5rem auto;
+
+`
+export const BottomRegisterDiv = styled.div`
+
+    padding-bottom: 11%;
+
+`
+
+
+//footer styling
+
+export const StyledFooter = styled.footer`
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    margin-top: 9%;
+`
+export const StyledP = styled.p`
+    text-align: center;
+    color: #fbfbfb;
+    font-size: 1rem;
+    
+    font-family: 'Raleway', sans-serif;
+    
+`
+

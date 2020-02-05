@@ -9,7 +9,7 @@ const Home = () => {
     const [showLogin, setShowLogin] = useState(true);
     return (
         <div>
-            <Header>Welcome to PicMetric</Header>
+            <Header>Welcome to PicMetric 2</Header>
             
             <div>
                 {showLogin ? <Login setShowLogin={setShowLogin} /> : <Registration setShowLogin={setShowLogin} />}
