@@ -4,6 +4,7 @@ import {HOne, HFive, StyledPhotoButton, UploadPhotoLabel} from './Styles';
 
 
 
+
 const UploadPhoto = (props) => {
     const [ photo, setPhoto] = useState({
         preview: '',

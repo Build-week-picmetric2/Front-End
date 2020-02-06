@@ -9,6 +9,7 @@ const Home = () => {
     const [showLogin, setShowLogin] = useState(true);
     return (
         <div>
+
             <Header>Welcome to PicMetric 2.0</Header>
             
             <div>

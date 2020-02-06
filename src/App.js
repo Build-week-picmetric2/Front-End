@@ -4,7 +4,8 @@ import Dashboard from './Dashboard';
 import Home from './Home';
 import { PrivateRoute } from './helpers/PrivateRoute';
 import Navigation from './components/Nagivation';
-import Footer from '../src/components/Footer';
+import Footer from './components/Footer';
+
 
 import './App.css';
 

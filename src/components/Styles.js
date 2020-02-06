@@ -223,6 +223,8 @@ export const UploadPhotoLabel = styled.label`
     display: flex;
     justify-content: center;
 `
+    
+`
 export const HOne = styled.h1`
     text-align: center;
     font-family: 'Julius Sans One', sans-serif;
