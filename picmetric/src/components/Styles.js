@@ -156,7 +156,7 @@ export const PhotoListDiv = styled.div`
 export const PhotoImg = styled.img`
     width: 75%;
     border-radius: 1rem;
-    
+    margin-top: 11%;
     
 `
 
@@ -164,11 +164,13 @@ export const StyledH2 = styled.h2`
     color: #fbfbfb;
     font-family: 'Julius Sans One', sans-serif;
     text-decoration: none;
+    
 `
 export const StyledH3 = styled.h3`
     color: #fbfbfb;
     font-family: 'Julius Sans One', sans-serif;
     text-decoration: none;
+    
 `
 
 //UploadPhoto Styling
@@ -213,8 +215,8 @@ export const StyledFooter = styled.footer`
     width: 100%;
     background-color: black;
     padding-top: 1%;
-
     position: absolute;
+    bottom: 0;
 `
 export const StyledP = styled.p`
     text-align: center;
