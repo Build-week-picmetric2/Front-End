@@ -52,7 +52,7 @@ export const deletePhoto = photo => {
     return dispatch => {
       dispatch({ type: DELETE_PHOTO_START });
       axiosWithAuth()
-        .delete(`api/photos/${photo.id}`)
+        .delete(`api/photos/${photo.image_id}`)
         .then(response => dispatch({ type: DELETE_PHOTO_SUCCESS, payload: response.data }))
         .catch(error => dispatch({ type: DELETE_PHOTO_FAILURE, payload: error }));
     };
@@ -62,7 +62,7 @@ export const deletePhoto = photo => {
     return dispatch => {
       dispatch({ type: UPDATE_PHOTO_START });
       axiosWithAuth()
-        .put(`api/photos/${photo.id}`, photo)
+        .put(`api/photos/${photo.image_id}`, photo)
         .then(response => dispatch({ type: UPDATE_PHOTO_SUCCESS, payload: response.data }))
         .catch(error => dispatch({ type: UPDATE_PHOTO_FAILURE, payload: error }));
     };
