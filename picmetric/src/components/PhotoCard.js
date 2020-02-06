@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { StyledH3 } from './Styles';
 
 const PhotoCard = (props) => {
     const [photo, editPhoto] = useState(props.photo);
@@ -14,7 +15,7 @@ const PhotoCard = (props) => {
     }
     return (
         <div>
-            <h3 style={{color:'white'}}>{props.photo.name}</h3>
+            <StyledH3>{props.photo.name}</StyledH3>
             <button onClick={toggleEdit}>Edit Title</button>
             <button onClick={()=> props.delete(props.photo)}>Delete Photo</button>
             {edit ? (

@@ -3,7 +3,8 @@ import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { connect } from 'react-redux'
 import { deletePhoto, updatePhoto } from '../redux/actions';
 import { Link } from 'react-router-dom';
-import {PhotoListDiv, PhotoImg, ListContainer, StyledH2, StyledH3} from './Styles';
+import { PhotoListDiv, PhotoImg, ListContainer } from './Styles';
+import PhotoCard from './PhotoCard';
 
 const PhotoList = (props) => {
     const [photos, setPhotos] = useState([])
@@ -31,8 +32,8 @@ const PhotoList = (props) => {
                             src={photo.url}
                             alt={photo.name}
                             />
-                            <StyledH2>{photo.name}</StyledH2>
-                            <StyledH3>{photo.category}</StyledH3>
+                            {/* <StyledH2>{photo.name}</StyledH2>
+                            <StyledH3>{photo.category}</StyledH3> */}
                         </Link>
                         <PhotoCard key={photo.url} photo={photo} delete={props.deletePhoto} upDate={props.updatePhoto}/>
                     </PhotoListDiv>
