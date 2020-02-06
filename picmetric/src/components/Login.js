@@ -52,7 +52,7 @@ const Login = (props) => {
         <StyledLabel>
           Password:
           <input
-            type="text"
+            type="password"
             name="password"
             value={user.password}
             onChange={handleChange}
