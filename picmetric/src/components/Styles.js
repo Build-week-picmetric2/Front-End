@@ -149,7 +149,7 @@ export const StyledFooter = styled.footer`
     padding: 1%;
     bottom: 0;
     margin: 0;
-    position: absolute;
+    position: relative;
 `
 export const StyledP = styled.p`
     text-align: center;

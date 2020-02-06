@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import styled from 'styled-components';
 
-const H5 =styled.h5`
+const H5 = styled.h5`
     text-align: center;
     font-family: 'Julius Sans One', sans-serif;
-
+    
 `
 
 const H1 = styled.h1`
