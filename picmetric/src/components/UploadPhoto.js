@@ -41,7 +41,7 @@ const UploadPhoto = (props) => {
                                 <i className="fas fa-circle fa-stack-2x"></i>
                                 <i className="fas fa-store fa-stack-1x fa-inverse"></i>
                             </span>
-                            <h5 className="text-center">Add File</h5>
+                            <h5 className="text-center">Choose File</h5>
                         </>
                     )
                 }
