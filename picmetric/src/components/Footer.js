@@ -8,7 +8,7 @@ const Footer = () => {
 
         <StyledFooter>
             <StyledP>
-            &copy; PicMetric 2, 2020 
+                &copy; PicMetric 2, 2020 
             </StyledP>
         </StyledFooter>
     )
