@@ -141,29 +141,35 @@ export const BottomRegisterDiv = styled.div`
 //PhotoList Styling
 export const ListContainer = styled.div`
     background-color: black;
-    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    
 `
 
 export const PhotoListDiv = styled.div`
-    width: 100%;
+    
+    width: 33%;
     text-align: center;
     background-color: black;
     
 `
 export const PhotoImg = styled.img`
-    
+    width: 75%;
     border-radius: 1rem;
-    width: 30%;
-    display: flex;
-    flex-flow: row wrap;
-`
-export const HTwo = styled.h2`
-    font-family: 'Julius Sans One', sans-serif;
-    color: #fbfbfb;
+    
     
 `
 
-
+export const StyledH2 = styled.h2`
+    color: #fbfbfb;
+    font-family: 'Julius Sans One', sans-serif;
+    text-decoration: none;
+`
+export const StyledH3 = styled.h3`
+    color: #fbfbfb;
+    font-family: 'Julius Sans One', sans-serif;
+    text-decoration: none;
+`
 
 //UploadPhoto Styling
 export const HFive = styled.h5`
@@ -191,7 +197,16 @@ export const StyledPhotoButton = styled.button`
     margin: 1.5rem auto;
     
     `
-
+//Dashboard Styling
+export const DashboardH1 = styled.h1`
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+    color: #fbfbfb;
+    background-color: black;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 2%;
+`
 
 //Footer Styling
 export const StyledFooter = styled.footer`
