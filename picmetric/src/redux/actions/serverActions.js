@@ -35,13 +35,13 @@ export const deletePhotos = id => dispatch => {
 
 export const editPhotos = photoToEdit => dispatch => {
     dispatch({ type: constants.EDITING_PHOTO })
-    const { title, category } = photoToPost;
+    const { name, category } = photoToPost;
     const newPhoto = {
         photo: photoToEdit.title,
-        title: photoToEdit.category
+        name: photoToEdit.category
     }
     console.log(photoToPost, 'put object shape')
-    console.log(title, category, 'what it looks like')
+    console.log(name, category, 'what it looks like')
     axiosWithAuth()
     .put(`/api/photos/${photoToEdit.id}`, newPhoto)
     .then(res => {

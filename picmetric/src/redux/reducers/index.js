@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux'
 
-import { placeholderReducer } from './placeholderReducer';
-import { serverReducers } from './serverReducers'
+import { serverReducer } from './serverReducers'
 
-export const reducer = combineReducers({ placeholderReducer: placeholderReducer, serverReducers: serverReducers})
+export const reducers = combineReducers({ serverReducers: serverReducer })

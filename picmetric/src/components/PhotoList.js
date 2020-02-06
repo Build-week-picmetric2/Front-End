@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
+import { connect } from 'react-redux'
+import { getUserPhotos, deletePhotos, editPhotos } from '../redux/actions';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -33,13 +35,15 @@ const PhotoList = (props) => {
             console.log(err.res.data)
         })
     },[setPhotos])
-
+    
     return (
         <PhotoListDiv>
             <H2>Gallery</H2>
             {photos.map(photo => {
                 return (
                 <>
+                <button>Edit Title</button>
+                <button onClick={()=> props.delete(props.photo)}>Delete Photo</button>
                 <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
                     <PhotoImg
                     src={photo.url}
