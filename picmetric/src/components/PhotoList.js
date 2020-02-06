@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PhotoCard from './PhotoCard';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { Link } from 'react-router-dom';
 
@@ -22,12 +21,16 @@ const PhotoList = (props) => {
             <div className='gallery'>
             {photos.map(photo => {
                 return (
-                <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
-                    <img
-                    src={photo.url}
-                    alt={photo.name}
-                    />
-                </Link>
+                    <>
+                        <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
+                            <img
+                            src={photo.url}
+                            alt={photo.name}
+                            />
+                        </Link>
+                        <h2>{photo.name}</h2>
+                        <h3>{photo.category}</h3>
+                    </>
                 );
             })}                
             </div>
