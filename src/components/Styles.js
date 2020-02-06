@@ -24,7 +24,7 @@ export const NavDiv = styled.nav`
     width: 100%;
     max-width: 1000px;
  `
-export const NavItems = styled.a`
+export const NavItems = styled.div`
     display: flex;
     width: 30%;
     justify-content: space-between;
