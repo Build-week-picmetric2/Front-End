@@ -56,7 +56,7 @@ export const Header = styled.h1`
 
 export const StyledLoginDiv = styled.div`
   background-color: #fdfdfd;
-  margin: 5% 2% 10% 2%;
+  margin: 5% 2% 5% 2%;
 `
 
 export const StyledLoginForm = styled.form`
@@ -136,7 +136,7 @@ export const StyledRegisterButton = styled.button`
 `
 export const BottomRegisterDiv = styled.div`
 
-    padding-bottom: 11%;
+    margin-bottom: 25%;
 
 `
 
@@ -147,9 +147,8 @@ export const StyledFooter = styled.footer`
     width: 100%;
     background-color: black;
     padding: 1%;
-    bottom: 0;
-    margin: 0;
-    position: relative;
+    
+    position: absolute;
 `
 export const StyledP = styled.p`
     text-align: center;
@@ -162,3 +161,29 @@ export const StyledP = styled.p`
 //photo list styles
 
 
+//UploadPhoto syles
+export const HFive = styled.h5`
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+    
+`
+
+export const HOne = styled.h1`
+    text-align: center;
+    font-family: 'Julius Sans One', sans-serif;
+`
+
+export const StyledPhotoButton = styled.button`
+    font-family: 'Julius Sans One', sans-serif;
+    display: block;
+    background-color: black;
+    cursor: pointer;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    color: #fbfbfb;
+    margin: 1.5rem auto;
+    
+    `
