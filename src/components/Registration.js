@@ -91,7 +91,7 @@ const Registration = (props) => {
                     }
                     <StyledRegisterButton>Register</StyledRegisterButton>
                     <BottomRegisterDiv>
-                    {'Account Registered?'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(true)}}>Log in</a>
+                    {'Account Registered?'} <div style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(true)}}>Log in</div>
                     </BottomRegisterDiv>
                 </StyledRegisterForm>
             </RegisterDiv>
