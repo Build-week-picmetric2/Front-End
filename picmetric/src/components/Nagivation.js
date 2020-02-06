@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { logout } from '../helpers/logout';
 import {StyledNav, StyledImg, NavDiv, NavItems, H1, NavLinks} from '../components/Styles';
 
 
@@ -16,6 +16,9 @@ const Navigation = () => {
                 <NavItems>
                     <NavLinks href = '/'>Home</NavLinks>
                     <NavLinks href = '/dashboard'>Dashboard</NavLinks>
+                    <button onClick={logout}>
+                        Logout
+                    </button>
                 </NavItems>
             </NavDiv>
         </StyledNav>

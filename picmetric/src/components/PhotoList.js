@@ -1,25 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
+import { connect } from 'react-redux'
+import { deletePhoto, updatePhoto } from '../redux/actions';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { PhotoListDiv, PhotoImg, ListContainer } from './Styles';
+import PhotoCard from './PhotoCard';
 
-const PhotoListDiv = styled.div`
-    padding-top: 1%;
-    text-align: center;
-    background-color: black;
-    
-`
-const PhotoImg = styled.img`
-    margin: 1%;
-    border-radius: 1rem;
-    width: 30%;
-    
-`
-const H2 = styled.h2`
-    font-family: 'Julius Sans One', sans-serif;
-    color: #fbfbfb;
-    
-`
 const PhotoList = (props) => {
     const [photos, setPhotos] = useState([])
     useEffect(()=> {
@@ -33,25 +19,37 @@ const PhotoList = (props) => {
             console.log(err.res.data)
         })
     },[setPhotos])
+    
     return (
-        <PhotoListDiv>
-            <H2>Gallery</H2>
+            
+        <ListContainer>
+            
             {photos.map(photo => {
                 return (
-                    <>
+                    <PhotoListDiv>
                         <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
-                            <img
+                            <PhotoImg
                             src={photo.url}
                             alt={photo.name}
                             />
+                            {/* <StyledH2>{photo.name}</StyledH2>
+                            <StyledH3>{photo.category}</StyledH3> */}
                         </Link>
-                        <h2>{photo.name}</h2>
-                        <h3>{photo.category}</h3>
-                    </>
+                        <PhotoCard key={photo.url} photo={photo} delete={props.deletePhoto} upDate={props.updatePhoto}/>
+                    </PhotoListDiv>
                 );
+            
             })}
-        </PhotoListDiv>
+        </ListContainer>
     )
 }
 
-export default PhotoList;
+const mapStateToProps = state => {
+    return{
+        ...state,
+        photos: state.photos,
+        isFetching: state.isFetching
+    }
+};
+
+export default connect(mapStateToProps, { deletePhoto, updatePhoto }) (PhotoList);
