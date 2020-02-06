@@ -12,9 +12,6 @@ const constants = {
     EDIT_PHOTO: 'EDIT_PHOTO',
 //loginstore
     STORE_LOGIN: 'STORE_LOGIN',
-//ds
-    SET_POST: 'SET_POST',
-    SAVE_DS_RESPONSE: 'SAVE_DS_RESPONSE'
 }
 
 export default constants;

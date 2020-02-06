@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
+import { connect } from 'react-redux'
+import { deletePhoto, updatePhoto } from '../redux/actions';
 import { Link } from 'react-router-dom';
 import {PhotoListDiv, PhotoImg, ListContainer, StyledH2, StyledH3} from './Styles';
-
 
 const PhotoList = (props) => {
     const [photos, setPhotos] = useState([])
@@ -17,6 +18,7 @@ const PhotoList = (props) => {
             console.log(err.res.data)
         })
     },[setPhotos])
+    
     return (
             
         <ListContainer>
@@ -32,8 +34,8 @@ const PhotoList = (props) => {
                             <StyledH2>{photo.name}</StyledH2>
                             <StyledH3>{photo.category}</StyledH3>
                         </Link>
-                        
-                    </PhotoListDiv> 
+                        <PhotoCard key={photo.url} photo={photo} delete={props.deletePhoto} upDate={props.updatePhoto}/>
+                    </PhotoListDiv>
                 );
             
             })}
@@ -41,4 +43,12 @@ const PhotoList = (props) => {
     )
 }
 
-export default PhotoList;
+const mapStateToProps = state => {
+    return{
+        ...state,
+        photos: state.photos,
+        isFetching: state.isFetching
+    }
+};
+
+export default connect(mapStateToProps, { deletePhoto, updatePhoto }) (PhotoList);
