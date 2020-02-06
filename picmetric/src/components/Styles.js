@@ -190,7 +190,9 @@ export const PhotoImg = styled.img`
     width: 75%;
     border-radius: 1rem;
     margin-top: 11%;
-    
+    @media (max-width: 500px) {
+        width: 95%;
+    }
 `
 
 export const StyledH2 = styled.h2`
