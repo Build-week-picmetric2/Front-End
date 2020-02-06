@@ -33,6 +33,7 @@ const PhotoList = (props) => {
             console.log(err.res.data)
         })
     },[setPhotos])
+
     return (
         <PhotoListDiv>
             <H2>Gallery</H2>

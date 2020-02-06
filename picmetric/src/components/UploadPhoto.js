@@ -57,6 +57,7 @@ const UploadPhoto = (props) => {
             raw: e.target.files[0],
         })
     }
+
     return(
         <div>
             <H1>Upload Photo</H1>
