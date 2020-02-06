@@ -26,15 +26,15 @@ const PhotoList = (props) => {
             <HTwo>Gallery</HTwo>
             {photos.map(photo => {
                 return (
-                <PhotoListDiv>
-                  <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
-                      <PhotoImg
-                      src={photo.url}
-                      alt={photo.name}
-                      />
-                  </Link>
-                  <PhotoCard key={photo.url} photo={photo} delete={props.deletePhoto} upDate={props.updatePhoto}/>
-                <PhotoListDiv/>
+                    <PhotoListDiv>
+                        <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
+                            <PhotoImg
+                            src={photo.url}
+                            alt={photo.name}
+                            />
+                        </Link>
+                        <PhotoCard key={photo.url} photo={photo} delete={props.deletePhoto} upDate={props.updatePhoto}/>
+                    </PhotoListDiv>
                 );
             })}
         </ListContainer>
