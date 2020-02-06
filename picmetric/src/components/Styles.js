@@ -212,7 +212,7 @@ export const DashboardH1 = styled.h1`
 export const StyledFooter = styled.footer`
     width: 100%;
     background-color: black;
-    padding: 1%;
+    padding-top: 1%;
 
     position: absolute;
 `
