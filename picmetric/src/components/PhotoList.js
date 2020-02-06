@@ -38,16 +38,16 @@ const PhotoList = (props) => {
             <H2>Gallery</H2>
             {photos.map(photo => {
                 return (
-                    <>
-                        <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
-                            <img
-                            src={photo.url}
-                            alt={photo.name}
-                            />
-                        </Link>
-                        <h2>{photo.name}</h2>
-                        <h3>{photo.category}</h3>
-                    </>
+                <>
+                <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
+                    <PhotoImg
+                    src={photo.url}
+                    alt={photo.name}
+                    />
+                </Link>
+                <h2 style={{color:'white'}}>{photo.name}</h2>
+                <h3 style={{color:'white'}}>{photo.category}</h3>
+                </>
                 );
             })}
         </PhotoListDiv>
