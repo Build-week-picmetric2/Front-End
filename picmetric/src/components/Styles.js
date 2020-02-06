@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-//navigation styling
+//Navigation Styling
 export const StyledNav = styled.nav`
     display: flex;
     justify-content: center;
@@ -18,14 +18,12 @@ export const StyledImg = styled.img`
 `
 
 export const NavDiv = styled.nav`
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           width: 100%;
-           max-width: 1000px;
-            
-
-        `
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+ `
 export const NavItems = styled.a`
     display: flex;
     width: 20%;
@@ -45,15 +43,15 @@ export const H1 = styled.h1`
     font-family: 'Julius Sans One', sans-serif;
 `
 
-//home page header styling
+//Home Styling
 export const Header = styled.h1`
     display: flex;
     justify-content: center;
     font-family: 'Julius Sans One', sans-serif;
     margin-top: 7%;
 `
-//Log in page styles
 
+//Login Styling
 export const StyledLoginDiv = styled.div`
   background-color: #fdfdfd;
   margin: 5% 2% 5% 2%;
@@ -96,7 +94,7 @@ export const BottomLoginDiv = styled.div`
 
 `
 
-//register page styling
+//Registration Styling
 export const RegisterDiv = styled.div`
     font-family: 'Julius Sans One', sans-serif;
     display: flex;
@@ -141,8 +139,7 @@ export const BottomRegisterDiv = styled.div`
 `
 
 
-//footer styling
-
+//Footer Styling
 export const StyledFooter = styled.footer`
     width: 100%;
     background-color: black;
@@ -158,10 +155,30 @@ export const StyledP = styled.p`
     font-family: 'Raleway', sans-serif;
     
 `
-//photo list styles
 
 
-//UploadPhoto syles
+//PhotoList Styling
+export const PhotoListDiv = styled.div`
+    padding-top: 1%;
+    text-align: center;
+    background-color: black;
+    
+`
+export const PhotoImg = styled.img`
+    margin: 1%;
+    border-radius: 1rem;
+    width: 30%;
+    
+`
+export const HTwo = styled.h2`
+    font-family: 'Julius Sans One', sans-serif;
+    color: #fbfbfb;
+    
+`
+
+
+
+//UploadPhoto Styling
 export const HFive = styled.h5`
     text-align: center;
     font-family: 'Julius Sans One', sans-serif;

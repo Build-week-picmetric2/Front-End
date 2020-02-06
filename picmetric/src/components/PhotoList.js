@@ -1,25 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import {PhotoListDiv, PhotoImg, HTwo} from './Styles';
 
-const PhotoListDiv = styled.div`
-    padding-top: 1%;
-    text-align: center;
-    background-color: black;
-    
-`
-const PhotoImg = styled.img`
-    margin: 1%;
-    border-radius: 1rem;
-    width: 30%;
-    
-`
-const H2 = styled.h2`
-    font-family: 'Julius Sans One', sans-serif;
-    color: #fbfbfb;
-    
-`
+
 const PhotoList = (props) => {
     const [photos, setPhotos] = useState([])
     useEffect(()=> {
@@ -35,7 +19,7 @@ const PhotoList = (props) => {
     },[setPhotos])
     return (
         <PhotoListDiv>
-            <H2>Gallery</H2>
+            <HTwo>Gallery</HTwo>
             {photos.map(photo => {
                 return (
                     <>
