@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
-import {HOne, HFive, StyledPhotoButton} from './Styles';
+import {HOne, HFive, StyledPhotoButton, UploadPhotoLabel} from './Styles';
 
 
 
@@ -37,7 +37,7 @@ const UploadPhoto = (props) => {
     return(
         <div>
             <HOne>Upload Photo</HOne>
-            <label htmlFor='upload-button'>
+            <UploadPhotoLabel htmlFor='upload-button'>
                 {
                     photo.preview ? <img src={ photo.preview } width='300' height='250' alt='preview' /> : (
                         <div>
@@ -49,7 +49,7 @@ const UploadPhoto = (props) => {
                         </div>
                     )
                 }
-            </label>
+            </UploadPhotoLabel>
             <input 
                 type='file'
                 id='upload-button'
