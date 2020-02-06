@@ -65,7 +65,7 @@ const Login = (props) => {
         }
 
        <BottomLoginDiv>
-          {'Not Registered?'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(false)}}>Create New Account</a>
+          {'Not Registered?'} <div style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(false)}}>Create New Account</div>
       </BottomLoginDiv>
 
        
