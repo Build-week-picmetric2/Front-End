@@ -5,10 +5,12 @@ import { axiosWithAuth } from '../../helpers/axiosWithAuth';
 export const FETCH_PHOTO_START = 'FETCH_PHOTO_START';
 export const FETCH_PHOTO_SUCCESS = 'FETCH_PHOTO_SUCCESS';
 export const FETCH_PHOTO_FAILURE = 'FETCH_PHOTO_FAILURE';
+
 //post to database
 // export const ADD_PHOTO_START = 'ADD_PHOTO_START';
 // export const ADD_PHOTO_SUCCESS = 'ADD_PHOTO_SUCCESS';
 // export const ADD_PHOTO_FAILURE = 'ADD_PHOTO_FAILURE';
+
 //edit & delete PHOTOS
 export const DELETE_PHOTO_START = 'DELETE_PHOTO_START';
 export const DELETE_PHOTO_SUCCESS = 'DELETE_PHOTO_SUCCESS';
