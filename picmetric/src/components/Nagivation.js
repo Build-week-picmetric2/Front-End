@@ -12,7 +12,7 @@ const Navigation = () => {
         <StyledNav>
             <NavDiv className = 'nav-container'>
                 <StyledImg src = {Logo} alt = 'PicMetric 2 Logo' />
-                    <H1>PICMETRIC 2</H1>
+                    <H1>PICMETRIC 2.0</H1>
                 <NavItems>
                     <NavLinks href = '/'>Home</NavLinks>
                     <NavLinks href = '/dashboard'>Dashboard</NavLinks>
