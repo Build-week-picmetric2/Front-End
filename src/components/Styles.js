@@ -29,18 +29,33 @@ export const NavItems = styled.a`
     width: 30%;
     justify-content: space-between;
     font-family: 'Julius Sans One', sans-serif;
-    
+    @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        font-size: .7rem;
+        
+    }
 `
 
 export const NavLinks = styled.a`
 
     text-decoration: none;
     color: #fbfbfb;
+    &:hover {
+        color: darkgray;
+    }
+    @media (max-width: 500px) {
+        padding: 6%;
+    }
 `
 
 export const H1 = styled.h1`
     margin-left: 22%;
     font-family: 'Julius Sans One', sans-serif;
+    @media (max-width: 500px) {
+        font-size: .8rem;
+        margin-left: 11%;
+    }
 `
 
 //Home Styling
@@ -85,7 +100,9 @@ export const StyledButton = styled.button`
     width: 200px;
     color: #fbfbfb;
     margin: 1.5rem auto;
-    
+    &:hover {
+        background-color: darkgray;
+    }
     `
 
 export const BottomLoginDiv = styled.div`
@@ -130,7 +147,9 @@ export const StyledRegisterButton = styled.button`
     width: 200px;
     color: #fbfbfb;
     margin: 1.5rem auto;
-
+    &:hover {
+        background-color: darkgray;
+    }
 `
 export const BottomRegisterDiv = styled.div`
 
@@ -138,12 +157,23 @@ export const BottomRegisterDiv = styled.div`
 
 `
 
+//PhotoCard Styling
+
+export const PhotoCardButton = styled.button`
+    &:hover {
+        color: darkgray;
+    }
+`
+
 //PhotoList Styling
 export const ListContainer = styled.div`
     background-color: black;
     display: flex;
     flex-flow: row wrap;
-    
+    @media (max-width: 500px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 export const PhotoListDiv = styled.div`
@@ -151,13 +181,18 @@ export const PhotoListDiv = styled.div`
     width: 33%;
     text-align: center;
     background-color: black;
-    
+    @media (max-width: 500px) {
+        width: 95%;
+        
+    }
 `
 export const PhotoImg = styled.img`
     width: 75%;
     border-radius: 1rem;
     margin-top: 11%;
-    
+    @media (max-width: 500px) {
+        width: 95%;
+    }
 `
 
 export const StyledH2 = styled.h2`
@@ -177,9 +212,19 @@ export const StyledH3 = styled.h3`
 export const HFive = styled.h5`
     text-align: center;
     font-family: 'Julius Sans One', sans-serif;
+    &:hover {
+        color: darkgray;
+        transition: .5s;
+        transform: scale(2);
+    }
     
 `
-
+export const UploadPhotoLabel = styled.label`
+    display: flex;
+    justify-content: center;
+`
+    
+`
 export const HOne = styled.h1`
     text-align: center;
     font-family: 'Julius Sans One', sans-serif;
@@ -197,7 +242,9 @@ export const StyledPhotoButton = styled.button`
     width: 200px;
     color: #fbfbfb;
     margin: 1.5rem auto;
-    
+    &:hover {
+        background-color: darkgray;
+    }
     `
 //Dashboard Styling
 export const DashboardH1 = styled.h1`
