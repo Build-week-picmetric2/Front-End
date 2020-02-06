@@ -39,13 +39,13 @@ const UploadPhoto = (props) => {
             <label htmlFor='upload-button'>
                 {
                     photo.preview ? <img src={ photo.preview } width='300' height='250' alt='preview' /> : (
-                        <>
+                        <div>
                             <span className="fa-stack fa-2x mt-3 mb-2">
                                 <i className="fas fa-circle fa-stack-2x"></i>
                                 <i className="fas fa-store fa-stack-1x fa-inverse"></i>
                             </span>
                             <HFive className="text-center">Add File</HFive>
-                        </>
+                        </div>
                     )
                 }
             </label>

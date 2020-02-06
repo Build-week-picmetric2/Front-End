@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import { Link } from 'react-router-dom';
-import {PhotoListDiv, PhotoImg, HTwo} from './Styles';
+import {PhotoListDiv, PhotoImg, HTwo, ListContainer} from './Styles';
 
 
 const PhotoList = (props) => {
@@ -18,23 +18,23 @@ const PhotoList = (props) => {
         })
     },[setPhotos])
     return (
-        <PhotoListDiv>
+        <ListContainer>
             <HTwo>Gallery</HTwo>
             {photos.map(photo => {
                 return (
-                    <>
+                    <PhotoListDiv>
                         <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
-                            <img
+                            <PhotoImg
                             src={photo.url}
                             alt={photo.name}
                             />
                         </Link>
                         <h2>{photo.name}</h2>
                         <h3>{photo.category}</h3>
-                    </>
+                    </PhotoListDiv> 
                 );
             })}
-        </PhotoListDiv>
+        </ListContainer>
     )
 }
 

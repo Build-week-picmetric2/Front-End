@@ -26,7 +26,7 @@ export const NavDiv = styled.nav`
  `
 export const NavItems = styled.a`
     display: flex;
-    width: 20%;
+    width: 30%;
     justify-content: space-between;
     font-family: 'Julius Sans One', sans-serif;
     
@@ -39,7 +39,7 @@ export const NavLinks = styled.a`
 `
 
 export const H1 = styled.h1`
-    margin-left: 11%;
+    margin-left: 22%;
     font-family: 'Julius Sans One', sans-serif;
 `
 
@@ -138,37 +138,24 @@ export const BottomRegisterDiv = styled.div`
 
 `
 
-
-//Footer Styling
-export const StyledFooter = styled.footer`
-    width: 100%;
-    background-color: black;
-    padding: 1%;
-    
-    position: absolute;
-`
-export const StyledP = styled.p`
-    text-align: center;
-    color: #fbfbfb;
-    font-size: 1rem;
-    
-    font-family: 'Raleway', sans-serif;
-    
-`
-
-
 //PhotoList Styling
+export const ListContainer = styled.div`
+    background-color: black;
+    width: 100%;
+`
+
 export const PhotoListDiv = styled.div`
-    padding-top: 1%;
+    width: 100%;
     text-align: center;
     background-color: black;
     
 `
 export const PhotoImg = styled.img`
-    margin: 1%;
+    
     border-radius: 1rem;
     width: 30%;
-    
+    display: flex;
+    flex-flow: row wrap;
 `
 export const HTwo = styled.h2`
     font-family: 'Julius Sans One', sans-serif;
@@ -204,3 +191,21 @@ export const StyledPhotoButton = styled.button`
     margin: 1.5rem auto;
     
     `
+
+
+//Footer Styling
+export const StyledFooter = styled.footer`
+    width: 100%;
+    background-color: black;
+    padding: 1%;
+
+    position: absolute;
+`
+export const StyledP = styled.p`
+    text-align: center;
+    color: #fbfbfb;
+    font-size: 1rem;
+
+    font-family: 'Raleway', sans-serif;
+
+`
