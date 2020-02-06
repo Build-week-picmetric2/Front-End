@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import Spinner from './Spinner';
-import {StyledLoginDiv, StyledLoginForm, StyledLabel, StyledButton } from './Styles';
+import {StyledLoginDiv, StyledLoginForm, StyledLabel, StyledButton, BottomLoginDiv } from './Styles';
 
 
     
@@ -64,9 +64,9 @@ const Login = (props) => {
           !!isLoading && <Spinner />
         }
 
-       <div>
+       <BottomLoginDiv>
           {'Not Registered?'} <a style={{cursor: 'pointer', color: 'black', textDecoration: 'underline'}} onClick={ (e) => {props.setShowLogin(false)}}>Create New Account</a>
-      </div>
+      </BottomLoginDiv>
 
        
       </StyledLoginForm>
