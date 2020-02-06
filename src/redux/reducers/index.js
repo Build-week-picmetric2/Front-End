@@ -69,7 +69,7 @@ function reducer(state = initialState, action) {
                 ...state,
                 error: "",
                 isFetching: false,
-                photos: [...action.payload]
+                photos: [...state.photos, action.payload]
         };
         case DELETE_PHOTO_FAILURE:
             return {
@@ -88,7 +88,7 @@ function reducer(state = initialState, action) {
               ...state,
               isFetching: false,
               error: "",
-              photos: [...action.payload]
+              photos: [...state.photos, action.payload]
             };
           case UPDATE_PHOTO_FAILURE:
             return {
