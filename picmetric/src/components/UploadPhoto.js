@@ -33,6 +33,7 @@ const UploadPhoto = (props) => {
             raw: e.target.files[0],
         })
     }
+
     return(
         <div>
             <HOne>Upload Photo</HOne>
