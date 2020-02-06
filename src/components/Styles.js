@@ -64,6 +64,9 @@ export const Header = styled.h1`
     justify-content: center;
     font-family: 'Julius Sans One', sans-serif;
     margin-top: 7%;
+    @media (max-width: 500px) {
+        font-size: 1rem;
+    }
 `
 
 //Login Styling
@@ -170,6 +173,7 @@ export const ListContainer = styled.div`
     background-color: black;
     display: flex;
     flex-flow: row wrap;
+    padding-bottom: 16%;
     @media (max-width: 500px) {
         flex-direction: column;
         align-items: center;
@@ -187,7 +191,7 @@ export const PhotoListDiv = styled.div`
     }
 `
 export const PhotoImg = styled.img`
-    width: 75%;
+    width: 90%;
     border-radius: 1rem;
     margin-top: 11%;
     @media (max-width: 500px) {
@@ -263,6 +267,7 @@ export const StyledFooter = styled.footer`
     padding-top: 1%;
     position: absolute;
     bottom: 0;
+    
 `
 export const StyledP = styled.p`
     text-align: center;
