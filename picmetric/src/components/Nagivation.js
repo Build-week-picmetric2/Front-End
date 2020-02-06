@@ -16,9 +16,7 @@ const Navigation = () => {
                 <NavItems>
                     <NavLinks href = '/'>Home</NavLinks>
                     <NavLinks href = '/dashboard'>Dashboard</NavLinks>
-                    <button onClick={logout}>
-                        Logout
-                    </button>
+                    <NavLinks href ='/' onClick={logout}>Logout</NavLinks>
                 </NavItems>
             </NavDiv>
         </StyledNav>
