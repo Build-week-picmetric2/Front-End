@@ -5,24 +5,8 @@ import { deletePhoto, updatePhoto } from '../redux/actions';
 import { Link } from 'react-router-dom';
 import PhotoCard from './PhotoCard';
 import styled from 'styled-components';
+import {PhotoListDiv, PhotoImg, HTwo, ListContainer} from './Styles';
 
-const PhotoListDiv = styled.div`
-    padding-top: 1%;
-    text-align: center;
-    background-color: black;
-    
-`
-const PhotoImg = styled.img`
-    margin: 1%;
-    border-radius: 1rem;
-    width: 30%;
-    
-`
-const H2 = styled.h2`
-    font-family: 'Julius Sans One', sans-serif;
-    color: #fbfbfb;
-    
-`
 const PhotoList = (props) => {
     const [photos, setPhotos] = useState([])
     useEffect(()=> {
@@ -38,22 +22,22 @@ const PhotoList = (props) => {
     },[setPhotos])
     
     return (
-        <PhotoListDiv>
-            <H2>Gallery</H2>
+        <ListContainer>
+            <HTwo>Gallery</HTwo>
             {photos.map(photo => {
                 return (
-                <>
-                <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
-                    <PhotoImg
-                    src={photo.url}
-                    alt={photo.name}
-                    />
-                </Link>
-                <PhotoCard key={photo.url} photo={photo} delete={props.deletePhoto} upDate={props.updatePhoto}/>
-                </>
+                <PhotoListDiv>
+                  <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
+                      <PhotoImg
+                      src={photo.url}
+                      alt={photo.name}
+                      />
+                  </Link>
+                  <PhotoCard key={photo.url} photo={photo} delete={props.deletePhoto} upDate={props.updatePhoto}/>
+                <PhotoListDiv/>
                 );
             })}
-        </PhotoListDiv>
+        </ListContainer>
     )
 }
 

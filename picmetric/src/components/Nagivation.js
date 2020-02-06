@@ -16,6 +16,7 @@ const Navigation = () => {
                 <NavItems>
                     <NavLinks href = '/'>Home</NavLinks>
                     <NavLinks href = '/dashboard'>Dashboard</NavLinks>
+                    <button>Logout</button>
                 </NavItems>
             </NavDiv>
         </StyledNav>
