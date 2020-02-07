@@ -27,7 +27,7 @@ const PhotoList = (props) => {
             {photos.map(photo => {
                 return (
                     <PhotoListDiv>
-                        <Link to={`/dashboard/images/${photo.image_id}`} key={photo.url}>
+                        <Link to={`/dashboard/${photo.image_id}`} key={photo.url}>
                             <PhotoImg
                             src={photo.url}
                             alt={photo.name}

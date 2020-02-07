@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../helpers/axiosWithAuth';
 import {HOne, HFive, StyledPhotoButton, UploadPhotoLabel} from './Styles';
+import Spinner from '../components/Spinner';
 
 
 
@@ -11,7 +12,7 @@ const UploadPhoto = (props) => {
         raw: '',
         uploadResponse: ''
     })
-    // const [ uploading, setUploading ] = useState(false)
+    const [ uploading, setUploading ] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -20,6 +21,7 @@ const UploadPhoto = (props) => {
         try {
             const res = await axiosWithAuth()
             .post('/api/photos', formData )
+            setUploading(false)
             setPhoto({ ...photo, uploadResponse: res.data.message })
             console.log(res.data)
         } catch (err) {
@@ -59,6 +61,9 @@ const UploadPhoto = (props) => {
             />
             <br />
             <p>{photo.uploadResponse}</p>
+            {
+                !!uploading && <Spinner />
+            }
             <StyledPhotoButton onClick={handleSubmit}>Upload Photo</StyledPhotoButton>
         </div>
     )
