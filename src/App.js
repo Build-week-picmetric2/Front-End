@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 
 
 import './App.css';
+import PhotoCard from './components/PhotoCard';
 
 
 
@@ -20,6 +21,7 @@ const App = (props) => {
             <Switch>
               <Route exact path='/' component={Home} />
               <PrivateRoute path='/dashboard' component={Dashboard} />
+              <PrivateRoute path='/dashboard/images/:id' component={PhotoCard} />
             </Switch>
 
             <Footer />
