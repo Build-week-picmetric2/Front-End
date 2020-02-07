@@ -27,7 +27,7 @@ const PhotoList = (props) => {
             {photos.map(photo => {
                 return (
                     <PhotoListDiv>
-                        <Link to={`/Dashboard/image/${photo.id}`} key={photo.url}>
+                        <Link to={`/dashboard/images/${photo.image_id}`} key={photo.url}>
                             <PhotoImg
                             src={photo.url}
                             alt={photo.name}
@@ -35,7 +35,7 @@ const PhotoList = (props) => {
                             {/* <StyledH2>{photo.name}</StyledH2>
                             <StyledH3>{photo.category}</StyledH3> */}
                         </Link>
-                        <PhotoCard key={photo.url} photo={photo} delete={props.deletePhoto} upDate={props.updatePhoto}/>
+                        <PhotoCard key={photo.image_id} photo={photo} delete={props.deletePhoto} upDate={props.updatePhoto}/>
                     </PhotoListDiv>
                 );
             

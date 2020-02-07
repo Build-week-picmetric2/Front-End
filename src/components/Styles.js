@@ -163,8 +163,16 @@ export const BottomRegisterDiv = styled.div`
 //PhotoCard Styling
 
 export const PhotoCardButton = styled.button`
+    font-family: 'Roboto', sans-serif;
+    padding: 6px;
+    background: #f5b942;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    margin: 0 2% 0 2%; 
     &:hover {
-        color: darkgray;
+    transition: .5s;
+    transform: scale(1.10);
     }
 `
 
@@ -215,11 +223,15 @@ export const StyledH3 = styled.h3`
 //UploadPhoto Styling
 export const HFive = styled.h5`
     text-align: center;
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    padding: 6px;
+    background: #f5b942;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
     &:hover {
-        color: darkgray;
         transition: .5s;
-        transform: scale(2);
+        transform: scale(1.10);
     }
     
 `
@@ -234,7 +246,7 @@ export const HOne = styled.h1`
 `
 
 export const StyledPhotoButton = styled.button`
-    font-family: 'Julius Sans One', sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: block;
     background-color: black;
     cursor: pointer;
