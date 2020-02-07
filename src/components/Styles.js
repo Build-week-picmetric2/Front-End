@@ -173,6 +173,7 @@ export const PhotoCardButton = styled.button`
     &:hover {
     transition: .5s;
     transform: scale(1.10);
+    cursor: pointer;
     }
 `
 
@@ -229,6 +230,7 @@ export const HFive = styled.h5`
     border-radius: 6px;
     color: white;
     font-weight: bold;
+    cursor: pointer;
     &:hover {
         transition: .5s;
         transform: scale(1.10);

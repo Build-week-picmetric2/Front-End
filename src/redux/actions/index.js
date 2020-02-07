@@ -34,7 +34,7 @@ export const getPhotos = () => dispatch => {
         })
 }
 
-// export const addPhoto = smurf => {
+// export const addPhoto = photo => {
 //     return dispatch => {
 //         dispatch({ type: ADD_PHOTO_START });
 //         axios
