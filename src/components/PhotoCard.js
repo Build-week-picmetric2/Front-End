@@ -16,7 +16,8 @@ const PhotoCard = (props) => {
     return (
         <div>
             <StyledH3>{props.photo.name}</StyledH3>
-            <p style={{color:'white'}}>{props.photo.description}</p>
+            <p style={{color:'white'}}>Description: {props.photo.description}</p>
+            <p style={{color:'white'}}>Results: {props.photo.category}</p>
             <PhotoCardButton onClick={toggleEdit}>Edit Title</PhotoCardButton>
             <PhotoCardButton onClick={()=> props.delete(props.photo)}>Delete Photo</PhotoCardButton>
             {edit ? (
