@@ -20,7 +20,7 @@ const App = (props) => {
             <Switch>
               <Route exact path='/' component={Home} />
               <PrivateRoute exact path='/dashboard' component={Dashboard} />
-              <PrivateRoute path='/dashboard/images/:id' component={PhotoCard}/>
+              {/* <PrivateRoute path='/dashboard/images/:id' component={PhotoCard}/> */}
             </Switch>
 
             <Footer />
