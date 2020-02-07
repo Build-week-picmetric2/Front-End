@@ -5,10 +5,9 @@ import Home from './Home';
 import { PrivateRoute } from './helpers/PrivateRoute';
 import Navigation from './components/Nagivation';
 import Footer from './components/Footer';
-
+import PhotoDetails from './components/PhotoDetails';
 
 import './App.css';
-import PhotoCard from './components/PhotoCard';
 
 
 
@@ -21,7 +20,7 @@ const App = (props) => {
             <Switch>
               <Route exact path='/' component={Home} />
               <PrivateRoute path='/dashboard' component={Dashboard} />
-              <PrivateRoute path='/dashboard/:id' component={PhotoCard} />
+              <PrivateRoute path='/images/:id' component={PhotoDetails} />
             </Switch>
 
             <Footer />
