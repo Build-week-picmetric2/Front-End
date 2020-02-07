@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 
@@ -24,7 +23,7 @@ export const NavDiv = styled.nav`
     width: 100%;
     max-width: 1000px;
  `
-export const NavItems = styled.a`
+export const NavItems = styled.div`
     display: flex;
     width: 30%;
     justify-content: space-between;
@@ -135,7 +134,7 @@ export const StyledRegisterForm = styled.form`
 `
 
 export const StyledInput = styled.input`
-    font-family: 'Julius Sans One', sans-serif;
+    
     margin: 5%;
 `
 export const StyledRegisterButton = styled.button`
