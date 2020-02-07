@@ -134,7 +134,7 @@ export const StyledRegisterForm = styled.form`
 `
 
 export const StyledInput = styled.input`
-    font-family: 'Julius Sans One', sans-serif;
+    
     margin: 5%;
 `
 export const StyledRegisterButton = styled.button`
