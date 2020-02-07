@@ -63,7 +63,7 @@ export const Header = styled.h1`
     display: flex;
     justify-content: center;
     font-family: 'Julius Sans One', sans-serif;
-    margin-top: 7%;
+    margin-top: 5%;
     @media (max-width: 500px) {
         font-size: 1rem;
     }
@@ -72,7 +72,7 @@ export const Header = styled.h1`
 //Login Styling
 export const StyledLoginDiv = styled.div`
   background-color: #fdfdfd;
-  margin: 5% 2% 5% 2%;
+  
 `
 
 export const StyledLoginForm = styled.form`
@@ -111,6 +111,7 @@ export const StyledButton = styled.button`
 export const BottomLoginDiv = styled.div`
 
     margin-top: 2%;
+    margin-bottom: 5%;
 
 `
 
@@ -120,7 +121,7 @@ export const RegisterDiv = styled.div`
     display: flex;
     justify-content: center;
     background-color: #fbfbfb;
-
+    padding-bottom: 5%;
 `
 
 export const StyledRegisterForm = styled.form`
@@ -155,8 +156,8 @@ export const StyledRegisterButton = styled.button`
     }
 `
 export const BottomRegisterDiv = styled.div`
-
-    margin-bottom: 25%;
+    padding-bottom: 5%;
+    padding-top: 5%;
 
 `
 
