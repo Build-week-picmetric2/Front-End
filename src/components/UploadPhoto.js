@@ -37,7 +37,7 @@ const UploadPhoto = (props) => {
 
     return(
         <div>
-            <HOne>Upload Photo</HOne>
+            {/* <HOne>Upload Photo</HOne> */}
             <UploadPhotoLabel htmlFor='upload-button'>
                 {
                     photo.preview ? <img src={ photo.preview } width='300' height='250' alt='preview' /> : (
@@ -59,7 +59,7 @@ const UploadPhoto = (props) => {
             />
             <br />
             <p>{photo.uploadResponse}</p>
-            <StyledPhotoButton onClick={handleSubmit}>Add Photo</StyledPhotoButton>
+            <StyledPhotoButton onClick={handleSubmit}>Upload Photo</StyledPhotoButton>
         </div>
     )
 }

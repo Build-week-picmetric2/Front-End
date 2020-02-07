@@ -16,6 +16,7 @@ const PhotoCard = (props) => {
     return (
         <div>
             <StyledH3>{props.photo.name}</StyledH3>
+            <p style={{color:'white'}}>{props.photo.description}</p>
             <PhotoCardButton onClick={toggleEdit}>Edit Title</PhotoCardButton>
             <PhotoCardButton onClick={()=> props.delete(props.photo)}>Delete Photo</PhotoCardButton>
             {edit ? (
@@ -33,7 +34,7 @@ const PhotoCard = (props) => {
                     onChange={e => editPhotoHandler(e)}
                     placeholder='title'
                 />
-                <button>Finish Editing</button>{''}
+                <button>Save</button>{''}
             </form>                
             ) : null}
         </div>
